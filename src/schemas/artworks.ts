@@ -27,10 +27,10 @@ export const artworkSchema = z.object({
 });
 
 export const artworkInsertSchema = z.object({
-    categoryId: z.number().int().nullable().optional(),
+    categoryId: z.coerce.number().nullable().optional(),
     title: z.string().min(1, { message: "Title is required" }),
     description: z.string().optional(),
-    isPublished: z.boolean().default(false),
+    isPublished: z.boolean(),
     sortOrder: z.number().int().default(0),
 });
 
