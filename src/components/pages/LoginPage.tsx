@@ -25,12 +25,17 @@ export default function LoginPage() {
         },
     });
 
+    console.log("Form errors:", errors);
+    console.log("VITE_API_URL:", import.meta.env.VITE_API_URL);
+
     const onSubmit = async (data: UserLogin) => {
+        console.log("onSubmit called with:", data);
         try {
             await loginUser(data);
             toast.success("Welcome back!");
             navigate("/admin");
         } catch (err) {
+            console.error("Login error:", err);
             setError("username", {
                 type: "manual",
                 message: "Invalid username or password",
@@ -41,7 +46,6 @@ export default function LoginPage() {
             });
         }
     };
-
     return (
         <div className="flex items-center justify-center min-h-[80vh] p-8">
             <div className="w-full max-w-sm">

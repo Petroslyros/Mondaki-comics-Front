@@ -16,12 +16,8 @@ const Header = () => {
             <div className="container mx-auto px-6 py-4">
                 <div className="flex items-center justify-between">
 
-                    {/* Logo + Title */}
-                    <Link
-                        to="/"
-                        className="flex items-center gap-3"
-                        onClick={closeMenu}
-                    >
+                    {/* Logo */}
+                    <Link to="/" className="flex items-center gap-3" onClick={closeMenu}>
                         <span className="text-white text-xl md:text-2xl font-bold tracking-wide">
                             Mondaki<span className="text-[#e94560]">Comics</span>
                         </span>
@@ -30,16 +26,10 @@ const Header = () => {
                     {/* Desktop Navigation */}
                     <div className="hidden md:flex items-center gap-6">
                         <nav className="flex gap-6 text-gray-300 font-medium">
-                            <Link
-                                to="/"
-                                className="hover:text-white transition duration-200"
-                            >
+                            <Link to="/" className="hover:text-white transition duration-200">
                                 Gallery
                             </Link>
-                            <Link
-                                to="/contact"
-                                className="hover:text-white transition duration-200"
-                            >
+                            <Link to="/contact" className="hover:text-white transition duration-200">
                                 Contact
                             </Link>
                             {isAuthenticated && userRole === "Admin" && (
@@ -52,7 +42,8 @@ const Header = () => {
                                 </button>
                             )}
                         </nav>
-                        <AuthButton />
+                        {/* Μόνο αν είναι logged in εμφανίζεται το Logout */}
+                        {isAuthenticated && <AuthButton />}
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -70,34 +61,24 @@ const Header = () => {
                 {menuOpen && (
                     <div className="md:hidden mt-4 pb-4 border-t border-[#0f3460]">
                         <nav className="flex flex-col gap-3 py-4">
-                            <Link
-                                to="/"
-                                className="text-gray-300 hover:text-white transition py-2"
-                                onClick={closeMenu}
-                            >
+                            <Link to="/" className="text-gray-300 hover:text-white transition py-2" onClick={closeMenu}>
                                 Gallery
                             </Link>
-                            <Link
-                                to="/contact"
-                                className="text-gray-300 hover:text-white transition py-2"
-                                onClick={closeMenu}
-                            >
+                            <Link to="/contact" className="text-gray-300 hover:text-white transition py-2" onClick={closeMenu}>
                                 Contact
                             </Link>
                             {isAuthenticated && userRole === "Admin" && (
-                                <Link
-                                    to="/admin"
-                                    className="text-gray-300 hover:text-white transition py-2 flex items-center gap-1"
-                                    onClick={closeMenu}
-                                >
+                                <Link to="/admin" className="text-gray-300 hover:text-white transition py-2 flex items-center gap-1" onClick={closeMenu}>
                                     <LayoutDashboard className="w-4 h-4" />
                                     Admin
                                 </Link>
                             )}
                         </nav>
-                        <div className="border-t border-[#0f3460] pt-4">
-                            <AuthButton />
-                        </div>
+                        {isAuthenticated && (
+                            <div className="border-t border-[#0f3460] pt-4">
+                                <AuthButton />
+                            </div>
+                        )}
                     </div>
                 )}
             </div>
