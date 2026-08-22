@@ -109,6 +109,7 @@ const ContactPage = () => {
                         </div>
 
                         <Button
+                            type="submit"
                             disabled={isSubmitting}
                             className="w-full bg-[#e94560] hover:bg-[#c73652] text-white"
                         >
