@@ -19,33 +19,21 @@ export default function LoginPage() {
         setError,
     } = useForm<UserLogin>({
         resolver: zodResolver(userLoginSchema),
-        defaultValues: {
-            username: "",
-            password: "",
-        },
+        defaultValues: { username: "", password: "" },
     });
 
-    console.log("Form errors:", errors);
-    console.log("VITE_API_URL:", import.meta.env.VITE_API_URL);
-
     const onSubmit = async (data: UserLogin) => {
-        console.log("onSubmit called with:", data);
         try {
             await loginUser(data);
             toast.success("Welcome back!");
             navigate("/admin");
         } catch (err) {
             console.error("Login error:", err);
-            setError("username", {
-                type: "manual",
-                message: "Invalid username or password",
-            });
-            setError("password", {
-                type: "manual",
-                message: "Invalid username or password",
-            });
+            setError("username", { type: "manual", message: "Invalid username or password" });
+            setError("password", { type: "manual", message: "Invalid username or password" });
         }
     };
+
     return (
         <div className="flex items-center justify-center min-h-[80vh] p-8">
             <div className="w-full max-w-sm">
@@ -54,7 +42,7 @@ export default function LoginPage() {
                 </h1>
                 <form
                     onSubmit={handleSubmit(onSubmit)}
-                    className="bg-[#16213e] border border-[#0f3460] p-8 rounded-lg space-y-4"
+                    className="bg-[#121212] border border-[#2a2a2a] p-8 rounded-lg space-y-4"
                     autoComplete="off"
                 >
                     <div>
@@ -64,10 +52,10 @@ export default function LoginPage() {
                         <Input
                             id="username"
                             {...register("username")}
-                            className="bg-[#1a1a2e] border-[#0f3460] text-white mt-1"
+                            className="bg-[#0a0a0a] border-[#2a2a2a] text-white mt-1"
                         />
                         {errors.username && (
-                            <div className="text-[#e94560] text-sm mt-1">
+                            <div className="text-gray-400 text-sm mt-1">
                                 {errors.username.message}
                             </div>
                         )}
@@ -81,23 +69,19 @@ export default function LoginPage() {
                             type="password"
                             id="password"
                             {...register("password")}
-                            className="bg-[#1a1a2e] border-[#0f3460] text-white mt-1"
+                            className="bg-[#0a0a0a] border-[#2a2a2a] text-white mt-1"
                         />
                         {errors.password && (
-                            <div className="text-[#e94560] text-sm mt-1">
+                            <div className="text-gray-400 text-sm mt-1">
                                 {errors.password.message}
                             </div>
                         )}
                     </div>
-                    {Object.keys(errors).length > 0 && (
-                        <div className="text-red-500 text-sm">
-                            {JSON.stringify(errors)}
-                        </div>
-                    )}
+
                     <Button
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full bg-[#e94560] hover:bg-[#c73652] text-white mt-2"
+                        className="w-full bg-white hover:bg-gray-200 text-black mt-2"
                     >
                         {isSubmitting ? "Logging in..." : "Login"}
                     </Button>
