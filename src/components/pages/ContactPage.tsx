@@ -50,7 +50,7 @@ const ContactPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div className="bg-gray-50 dark:bg-[#121212] border border-gray-200 dark:border-[#2a2a2a] rounded-lg p-8">
                     <h2 className="text-black dark:text-white font-semibold text-xl mb-6">
-                        Στείλε μου ένα Μήνυμα
+                        Συμπλήρωσε :
                     </h2>
                     <form
                         onSubmit={handleSubmit(onSubmit)}
