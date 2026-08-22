@@ -47,7 +47,7 @@ const ArtworkDetailPage = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                 <div>
-                    <div className="bg-gray-100 dark:bg-[#121212] rounded-lg overflow-hidden border border-gray-200 dark:border-[#2a2a2a] aspect-square">
+                    <div className="rounded-lg overflow-hidden aspect-square">
                         {currentImage ? (
                             <img
                                 src={currentImage.imageUrl}
