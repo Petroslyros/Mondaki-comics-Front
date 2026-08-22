@@ -4,6 +4,13 @@
 @import "@fontsource-variable/geist";
 @custom-variant dark (&:is(.dark, .dark *));
 
+@font-face {
+    font-family: "Komika Hand";
+    src: url("public/fonts/ComicBookFun-Regular_2.0.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {

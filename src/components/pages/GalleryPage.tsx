@@ -46,7 +46,10 @@ const GalleryPage = () => {
     return (
         <div className="container mx-auto px-6 py-12">
             <div className="text-center mb-12">
-                <h1 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-4 tracking-wide" style={{ fontFamily: "'Bangers', cursive" }}>
+                <h1
+                    className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-4 tracking-wide"
+                    style={{ fontFamily: "'Komika Hand', cursive" }}
+                >
                     Mondaki<span className="text-gray-500 dark:text-gray-400">Comics</span>
                 </h1>
                 <p className="text-gray-500 dark:text-gray-400 text-lg max-w-xl mx-auto">
