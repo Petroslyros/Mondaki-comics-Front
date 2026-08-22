@@ -86,6 +86,8 @@ const ArtworkFormPage = () => {
             if (isEdit && id) {
                 await updateArtwork(Number(id), data);
                 toast.success("Artwork updated");
+                navigate("/admin/artworks");
+                return;
             } else {
                 const created = await createArtwork(data);
                 toast.success("Artwork created");
