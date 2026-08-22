@@ -56,10 +56,10 @@ const NewsPage = () => {
                     {news.map((post) => (
                         <div
                             key={post.id}
-                            className="bg-gray-50 dark:bg-[#121212] border border-gray-200 dark:border-[#2a2a2a] rounded-lg overflow-hidden"
+                            className="bg-gray-50 dark:bg-[#121212] border border-gray-200 dark:border-[#2a2a2a] rounded-lg p-6 flex gap-5"
                         >
                             {post.imageUrl && (
-                                <div className="w-full aspect-video bg-gray-200 dark:bg-[#0a0a0a]">
+                                <div className="flex-shrink-0 w-28 h-28 sm:w-32 sm:h-32 rounded-lg overflow-hidden bg-gray-200 dark:bg-[#0a0a0a]">
                                     <img
                                         src={post.imageUrl}
                                         alt={post.title}
@@ -67,7 +67,7 @@ const NewsPage = () => {
                                     />
                                 </div>
                             )}
-                            <div className="p-6">
+                            <div className="flex-1 min-w-0">
                                 <div className="text-gray-400 dark:text-gray-500 text-sm mb-2">
                                     {formatDate(post.insertedAt)}
                                 </div>
