@@ -42,7 +42,7 @@ const ContactPage = () => {
                     Επικοινωνία
                 </h1>
                 <p className="text-gray-600 dark:text-gray-400 max-w-xl mx-auto">
-                    Ενδιαφέρεσαι για μια παραγγελία ή απλά θες να πεις ένα γεια;
+                    Ενδιαφέρεσαι για μια παραγγελία η για συνεργασία;
                     Στείλε μου ένα μήνυμα και θα σου απαντήσω το συντομότερο δυνατό.
                 </p>
             </div>
@@ -50,7 +50,7 @@ const ContactPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div className="bg-gray-50 dark:bg-[#121212] border border-gray-200 dark:border-[#2a2a2a] rounded-lg p-8">
                     <h2 className="text-black dark:text-white font-semibold text-xl mb-6">
-                        Στείλε ένα Μήνυμα
+                        Στείλε μου ένα Μήνυμα
                     </h2>
                     <form
                         onSubmit={handleSubmit(onSubmit)}
@@ -65,7 +65,7 @@ const ContactPage = () => {
                                 id="senderName"
                                 {...register("senderName")}
                                 className="bg-white dark:bg-[#0a0a0a] border-gray-300 dark:border-[#2a2a2a] text-black dark:text-white mt-1"
-                                placeholder="Μαρία Παπαδοπούλου"
+                                placeholder=""
                             />
                             {errors.senderName && (
                                 <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">
@@ -83,7 +83,7 @@ const ContactPage = () => {
                                 type="email"
                                 {...register("senderEmail")}
                                 className="bg-white dark:bg-[#0a0a0a] border-gray-300 dark:border-[#2a2a2a] text-black dark:text-white mt-1"
-                                placeholder="maria@example.com"
+                                placeholder=""
                             />
                             {errors.senderEmail && (
                                 <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">
@@ -100,7 +100,7 @@ const ContactPage = () => {
                                 id="message"
                                 {...register("message")}
                                 className="bg-white dark:bg-[#0a0a0a] border-gray-300 dark:border-[#2a2a2a] text-black dark:text-white mt-1 min-h-[120px]"
-                                placeholder="Πες μου για το project σου..."
+                                placeholder=""
                             />
                             {errors.message && (
                                 <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">
