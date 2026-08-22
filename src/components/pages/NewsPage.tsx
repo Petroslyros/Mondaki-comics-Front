@@ -56,10 +56,12 @@ const NewsPage = () => {
                     {news.map((post) => (
                         <div
                             key={post.id}
-                            className="bg-gray-50 dark:bg-[#121212] border border-gray-200 dark:border-[#2a2a2a] rounded-lg p-6 flex gap-5"
+                            onClick={() => navigate(`/news/${post.id}`)}
+                            className="bg-gray-50 dark:bg-[#121212] border border-gray-200 dark:border-[#2a2a2a] hover:border-black dark:hover:border-white
+                                       rounded-lg p-6 flex gap-5 cursor-pointer transition"
                         >
                             {post.imageUrl && (
-                                <div className="flex-shrink-0 w-28 h-28 sm:w-32 sm:h-32 rounded-lg overflow-hidden bg-gray-200 dark:bg-[#0a0a0a]">
+                                <div className="flex-shrink-0 w-40 h-40 rounded-lg overflow-hidden bg-gray-200 dark:bg-[#0a0a0a]">
                                     <img
                                         src={post.imageUrl}
                                         alt={post.title}
@@ -74,7 +76,7 @@ const NewsPage = () => {
                                 <h2 className="text-black dark:text-white font-semibold text-xl mb-3">
                                     {post.title}
                                 </h2>
-                                <p className="text-gray-600 dark:text-gray-300 leading-relaxed whitespace-pre-line">
+                                <p className="text-gray-600 dark:text-gray-300 leading-relaxed line-clamp-3">
                                     {post.content}
                                 </p>
                             </div>

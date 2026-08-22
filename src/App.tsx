@@ -11,6 +11,7 @@ import LoginPage from "@/components/pages/LoginPage";
 import UnauthorizedPage from "@/components/pages/UnauthorizedPage";
 import AboutPage from "@/components/pages/AboutPage";
 import NewsPage from "@/components/pages/NewsPage";
+import NewsDetailPage from "@/components/pages/NewsDetailPage";
 
 
 // Admin pages
@@ -36,6 +37,7 @@ function App() {
               <Route path="login" element={<LoginPage />} />
               <Route path="about" element={<AboutPage />} />
               <Route path="news" element={<NewsPage />} />
+              <Route path="news/:id" element={<NewsDetailPage />} />
               <Route path="unauthorized" element={<UnauthorizedPage />} />
 
               {/* Admin only routes */}

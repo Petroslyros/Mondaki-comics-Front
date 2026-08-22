@@ -65,4 +65,11 @@ export async function setNewsImage(id: number, file: File): Promise<NewsPost> {
     });
     if (!res.ok) throw new Error("Failed to upload image");
     return await res.json();
+
+}
+
+export async function getNewsById(id: number): Promise<NewsPost> {
+    const res = await fetch(`${API_URL}/News/GetNewsById/${id}`);
+    if (!res.ok) throw new Error("Failed to fetch news post");
+    return await res.json();
 }
