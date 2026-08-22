@@ -24,7 +24,7 @@ const ArtworkDetailPage = () => {
     if (loading) {
         return (
             <div className="flex items-center justify-center min-h-[60vh]">
-                <p className="text-gray-400">Loading...</p>
+                <p className="text-gray-500 dark:text-gray-400">Loading...</p>
             </div>
         );
     }
@@ -36,21 +36,18 @@ const ArtworkDetailPage = () => {
 
     return (
         <div className="container mx-auto px-6 py-12 max-w-5xl">
-            {/* Back button */}
             <Button
                 variant="ghost"
                 onClick={() => navigate("/")}
-                className="text-gray-400 hover:text-white mb-8"
+                className="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white mb-8"
             >
                 <ArrowLeft className="w-4 h-4 mr-2" />
                 Back to Gallery
             </Button>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                {/* Image viewer */}
                 <div>
-                    {/* Main image */}
-                    <div className="bg-[#16213e] rounded-lg overflow-hidden border border-[#0f3460] aspect-square">
+                    <div className="bg-gray-100 dark:bg-[#121212] rounded-lg overflow-hidden border border-gray-200 dark:border-[#2a2a2a] aspect-square">
                         {currentImage ? (
                             <img
                                 src={currentImage.imageUrl}
@@ -64,37 +61,34 @@ const ArtworkDetailPage = () => {
                                 className="w-full h-full object-contain"
                             />
                         ) : (
-                            <div className="w-full h-full flex items-center justify-center text-gray-500">
+                            <div className="w-full h-full flex items-center justify-center text-gray-400 dark:text-gray-500">
                                 No image
                             </div>
                         )}
                     </div>
 
-                    {/* Image navigation */}
                     {images.length > 1 && (
                         <div className="mt-4">
-                            {/* Prev/Next */}
                             <div className="flex items-center justify-between mb-3">
                                 <button
                                     onClick={() => setSelectedImageIndex(i => Math.max(0, i - 1))}
                                     disabled={selectedImageIndex === 0}
-                                    className="text-gray-400 hover:text-white disabled:opacity-30 transition"
+                                    className="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white disabled:opacity-30 transition"
                                 >
                                     <ChevronLeft className="w-6 h-6" />
                                 </button>
-                                <span className="text-gray-400 text-sm">
+                                <span className="text-gray-500 dark:text-gray-400 text-sm">
                                     {selectedImageIndex + 1} / {images.length}
                                 </span>
                                 <button
                                     onClick={() => setSelectedImageIndex(i => Math.min(images.length - 1, i + 1))}
                                     disabled={selectedImageIndex === images.length - 1}
-                                    className="text-gray-400 hover:text-white disabled:opacity-30 transition"
+                                    className="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white disabled:opacity-30 transition"
                                 >
                                     <ChevronRight className="w-6 h-6" />
                                 </button>
                             </div>
 
-                            {/* Thumbnails */}
                             <div className="flex gap-2 overflow-x-auto pb-2">
                                 {images.map((img, index) => (
                                     <button
@@ -102,8 +96,8 @@ const ArtworkDetailPage = () => {
                                         onClick={() => setSelectedImageIndex(index)}
                                         className={`flex-shrink-0 w-16 h-16 rounded overflow-hidden border-2 transition ${
                                             index === selectedImageIndex
-                                                ? "border-[#e94560]"
-                                                : "border-[#0f3460] hover:border-gray-400"
+                                                ? "border-black dark:border-white"
+                                                : "border-gray-200 dark:border-[#2a2a2a] hover:border-gray-400 dark:hover:border-gray-500"
                                         }`}
                                     >
                                         <img
@@ -118,32 +112,31 @@ const ArtworkDetailPage = () => {
                     )}
                 </div>
 
-                {/* Info */}
                 <div className="flex flex-col gap-4">
                     <div>
                         {artwork.categoryName && (
-                            <Badge className="bg-[#e94560] text-white mb-3">
+                            <Badge className="bg-black text-white dark:bg-white dark:text-black mb-3">
                                 {artwork.categoryName}
                             </Badge>
                         )}
-                        <h1 className="text-3xl font-bold text-white">
+                        <h1 className="text-3xl font-bold text-black dark:text-white">
                             {artwork.title}
                         </h1>
                     </div>
 
                     {artwork.description && (
-                        <p className="text-gray-300 leading-relaxed">
+                        <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                             {artwork.description}
                         </p>
                     )}
 
                     <div className="mt-auto pt-8">
-                        <p className="text-gray-500 text-sm mb-4">
+                        <p className="text-gray-400 dark:text-gray-500 text-sm mb-4">
                             Interested in this work? Get in touch!
                         </p>
                         <Button
                             onClick={() => navigate("/contact")}
-                            className="bg-[#e94560] hover:bg-[#c73652] text-white w-full"
+                            className="bg-black hover:bg-gray-800 dark:bg-white dark:hover:bg-gray-200 text-white dark:text-black w-full"
                         >
                             Contact Me
                         </Button>

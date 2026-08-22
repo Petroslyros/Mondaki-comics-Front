@@ -40,8 +40,7 @@ const Footer = () => {
                             {socialLinks.map((link) => {
                                 const Icon = link.icon;
                                 return (
-                                    <a
-
+                                <a
                                     key={link.name}
                                 href={link.url}
                                 target={link.name === "Email" ? undefined : "_blank"}
@@ -63,6 +62,9 @@ const Footer = () => {
                             © {currentYear}{" "}
                             <span className="font-medium text-black dark:text-white">Mondaki</span>
                             . All Rights Reserved.
+                        </div>
+                        <div className="text-xs text-gray-400 dark:text-gray-500">
+                            Built with React • ASP.NET Core • Cloudflare R2
                         </div>
                     </div>
                 </div>
