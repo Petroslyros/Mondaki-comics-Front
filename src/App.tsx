@@ -16,9 +16,11 @@ import ArtworksAdminPage from "@/components/pages/admin/ArtworksAdminPage";
 import ArtworkFormPage from "@/components/pages/admin/ArtworkFormPage";
 import CategoriesAdminPage from "@/components/pages/admin/CategoriesAdminPage";
 import MessagesPage from "@/components/pages/admin/MessagesPage";
+import {ThemeProvider} from "@/context/ThemeProvider.tsx";
 
 function App() {
   return (
+      <ThemeProvider>
       <AuthProvider>
         <BrowserRouter>
           <Routes>
@@ -43,6 +45,7 @@ function App() {
           </Routes>
         </BrowserRouter>
       </AuthProvider>
+      </ThemeProvider>
   );
 }
 

@@ -46,8 +46,7 @@ const ContactPage = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                {/* Contact Form */}
-                <div className="bg-[#16213e] border border-[#0f3460] rounded-lg p-8">
+                <div className="bg-[#121212] border border-[#2a2a2a] rounded-lg p-8">
                     <h2 className="text-white font-semibold text-xl mb-6">
                         Send a Message
                     </h2>
@@ -63,11 +62,11 @@ const ContactPage = () => {
                             <Input
                                 id="senderName"
                                 {...register("senderName")}
-                                className="bg-[#1a1a2e] border-[#0f3460] text-white mt-1"
+                                className="bg-[#0a0a0a] border-[#2a2a2a] text-white mt-1"
                                 placeholder="Jane Doe"
                             />
                             {errors.senderName && (
-                                <p className="text-[#e94560] text-sm mt-1">
+                                <p className="text-gray-400 text-sm mt-1">
                                     {errors.senderName.message}
                                 </p>
                             )}
@@ -81,11 +80,11 @@ const ContactPage = () => {
                                 id="senderEmail"
                                 type="email"
                                 {...register("senderEmail")}
-                                className="bg-[#1a1a2e] border-[#0f3460] text-white mt-1"
+                                className="bg-[#0a0a0a] border-[#2a2a2a] text-white mt-1"
                                 placeholder="jane@example.com"
                             />
                             {errors.senderEmail && (
-                                <p className="text-[#e94560] text-sm mt-1">
+                                <p className="text-gray-400 text-sm mt-1">
                                     {errors.senderEmail.message}
                                 </p>
                             )}
@@ -98,11 +97,11 @@ const ContactPage = () => {
                             <Textarea
                                 id="message"
                                 {...register("message")}
-                                className="bg-[#1a1a2e] border-[#0f3460] text-white mt-1 min-h-[120px]"
+                                className="bg-[#0a0a0a] border-[#2a2a2a] text-white mt-1 min-h-[120px]"
                                 placeholder="Tell me about your project..."
                             />
                             {errors.message && (
-                                <p className="text-[#e94560] text-sm mt-1">
+                                <p className="text-gray-400 text-sm mt-1">
                                     {errors.message.message}
                                 </p>
                             )}
@@ -111,14 +110,13 @@ const ContactPage = () => {
                         <Button
                             type="submit"
                             disabled={isSubmitting}
-                            className="w-full bg-[#e94560] hover:bg-[#c73652] text-white"
+                            className="w-full bg-white hover:bg-gray-200 text-black"
                         >
                             {isSubmitting ? "Sending..." : "Send Message"}
                         </Button>
                     </form>
                 </div>
 
-                {/* Social links */}
                 <div className="flex flex-col gap-6 justify-center">
                     <h2 className="text-white font-semibold text-xl">
                         Find Me Online
@@ -134,26 +132,26 @@ const ContactPage = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center gap-3 text-gray-300 hover:text-white transition"
-                    >
+                        >
                         <FaInstagram className="w-5 h-5 text-gray-400" />
                         @mondastardust95
                     </a>
                     <a
-                        href="https://www.facebook.com/mondaki.dakogianni"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-3 text-gray-300 hover:text-white transition"
+                    href="https://www.facebook.com/mondaki.dakogianni"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 text-gray-300 hover:text-white transition"
                     >
-                        <FaFacebookF className="w-5 h-5 text-gray-400" />
-                        Mondaki Comics
+                    <FaFacebookF className="w-5 h-5 text-gray-400" />
+                    Mondaki Comics
                 </a>
                 <a
-                    href="mailto:oliantakogianni@gmail.com"
-                    className="flex items-center gap-3 text-gray-300 hover:text-white transition"
+                href="mailto:oliantakogianni@gmail.com"
+                className="flex items-center gap-3 text-gray-300 hover:text-white transition"
                 >
-                    <Mail className="w-5 h-5 text-gray-400" />
-                    oliantakogianni@gmail.com
-                </a>
+                <Mail className="w-5 h-5 text-gray-400" />
+                oliantakogianni@gmail.com
+            </a>
         </div>
 </div>
 </div>
