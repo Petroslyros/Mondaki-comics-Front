@@ -5,9 +5,9 @@ const Footer = () => {
     const currentYear = new Date().getFullYear();
 
     const socialLinks = [
-        { name: "Instagram", url: "https://instagram.com/mondaki", icon: FaInstagram },
-        { name: "Facebook", url: "https://facebook.com/mondaki", icon: FaFacebookF },
-        { name: "Email", url: "mailto:mondaki@example.com", icon: Mail },
+        { name: "Instagram", url: "https://www.instagram.com/mondastardust95/", icon: FaInstagram },
+        { name: "Facebook", url: "https://www.facebook.com/mondaki.dakogianni", icon: FaFacebookF },
+        { name: "Email", url: "mailto:oliantakogianni@gmail.com", icon: Mail },
     ];
 
     return (

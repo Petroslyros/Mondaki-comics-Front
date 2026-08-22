@@ -45,25 +45,23 @@ const GalleryPage = () => {
 
     return (
         <div className="container mx-auto px-6 py-12">
-            {/* Hero */}
             <div className="text-center mb-12">
                 <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                    Mondaki<span className="text-[#e94560]">Comics</span>
+                    Mondaki<span className="text-gray-400">Comics</span>
                 </h1>
                 <p className="text-gray-400 text-lg max-w-xl mx-auto">
                     Original comics and illustrations
                 </p>
             </div>
 
-            {/* Category filters */}
             {categories.length > 0 && (
                 <div className="flex flex-wrap gap-2 justify-center mb-10">
                     <button
                         onClick={() => setSelectedCategory(null)}
                         className={`px-4 py-2 rounded-full text-sm font-medium transition ${
                             selectedCategory === null
-                                ? "bg-[#e94560] text-white"
-                                : "bg-[#16213e] text-gray-300 hover:bg-[#0f3460]"
+                                ? "bg-white text-black"
+                                : "bg-[#121212] text-gray-300 hover:bg-[#2a2a2a]"
                         }`}
                     >
                         All
@@ -74,8 +72,8 @@ const GalleryPage = () => {
                             onClick={() => setSelectedCategory(cat.id)}
                             className={`px-4 py-2 rounded-full text-sm font-medium transition ${
                                 selectedCategory === cat.id
-                                    ? "bg-[#e94560] text-white"
-                                    : "bg-[#16213e] text-gray-300 hover:bg-[#0f3460]"
+                                    ? "bg-white text-black"
+                                    : "bg-[#121212] text-gray-300 hover:bg-[#2a2a2a]"
                             }`}
                         >
                             {cat.name}
@@ -84,7 +82,6 @@ const GalleryPage = () => {
                 </div>
             )}
 
-            {/* Grid */}
             {filtered.length === 0 ? (
                 <div className="text-center text-gray-400 py-20">
                     No artworks found.
@@ -95,12 +92,11 @@ const GalleryPage = () => {
                         <div
                             key={artwork.id}
                             onClick={() => navigate(`/artwork/${artwork.id}`)}
-                            className="bg-[#16213e] rounded-lg overflow-hidden cursor-pointer
-                                       border border-[#0f3460] hover:border-[#e94560]
+                            className="bg-[#121212] rounded-lg overflow-hidden cursor-pointer
+                                       border border-[#2a2a2a] hover:border-white
                                        transition duration-300 hover:scale-105 group"
                         >
-                            {/* Cover image */}
-                            <div className="aspect-square overflow-hidden bg-[#0f3460]">
+                            <div className="aspect-square overflow-hidden bg-[#2a2a2a]">
                                 {artwork.coverImageUrl ? (
                                     <img
                                         src={artwork.coverImageUrl}
@@ -114,7 +110,6 @@ const GalleryPage = () => {
                                 )}
                             </div>
 
-                            {/* Info */}
                             <div className="p-4">
                                 <h3 className="text-white font-semibold truncate">
                                     {artwork.title}
@@ -122,7 +117,7 @@ const GalleryPage = () => {
                                 {artwork.categoryName && (
                                     <Badge
                                         variant="secondary"
-                                        className="mt-2 bg-[#0f3460] text-gray-300 text-xs"
+                                        className="mt-2 bg-[#2a2a2a] text-gray-300 text-xs"
                                     >
                                         {artwork.categoryName}
                                     </Badge>

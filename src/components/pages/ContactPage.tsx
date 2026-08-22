@@ -130,30 +130,30 @@ const ContactPage = () => {
 
                     <div className="flex flex-col gap-4">
                     <a
-                        href="https://instagram.com/mondaki"
+                        href="https://www.instagram.com/mondastardust95/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center gap-3 text-gray-300 hover:text-white transition"
-                        >
-                        <FaInstagram className="w-5 h-5 text-[#e94560]" />
-                        @mondaki
+                    >
+                        <FaInstagram className="w-5 h-5 text-gray-400" />
+                        @mondastardust95
                     </a>
                     <a
-                    href="https://facebook.com/mondaki"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 text-gray-300 hover:text-white transition"
+                        href="https://www.facebook.com/mondaki.dakogianni"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-3 text-gray-300 hover:text-white transition"
                     >
-                    <FaFacebookF className="w-5 h-5 text-[#e94560]" />
-                    Mondaki Comics
+                        <FaFacebookF className="w-5 h-5 text-gray-400" />
+                        Mondaki Comics
                 </a>
                 <a
-                href="mailto:mondaki@example.com"
-                className="flex items-center gap-3 text-gray-300 hover:text-white transition"
+                    href="mailto:oliantakogianni@gmail.com"
+                    className="flex items-center gap-3 text-gray-300 hover:text-white transition"
                 >
-                <Mail className="w-5 h-5 text-[#e94560]" />
-                mondaki@example.com
-            </a>
+                    <Mail className="w-5 h-5 text-gray-400" />
+                    oliantakogianni@gmail.com
+                </a>
         </div>
 </div>
 </div>
