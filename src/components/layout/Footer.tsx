@@ -10,6 +10,13 @@ const Footer = () => {
         { name: "Email", url: "mailto:oliantakogianni@gmail.com", icon: Mail },
     ];
 
+    const quickLinks = [
+        { label: "Gallery", url: "/" },
+        { label: "News", url: "/news" },
+        { label: "About me", url: "/about" },
+        { label: "Contact", url: "/contact" },
+    ];
+
     return (
         <footer className="bg-gray-50 dark:bg-[#121212] text-gray-600 dark:text-gray-300 border-t border-gray-200 dark:border-[#2a2a2a]">
             <div className="container mx-auto px-6 py-8">
@@ -22,25 +29,31 @@ const Footer = () => {
                         </p>
                     </div>
 
-                    {/*<div className="text-center">*/}
-                    {/*    <h4 className="text-black dark:text-white font-semibold mb-3">Quick Links</h4>*/}
-                    {/*    <div className="flex flex-col gap-2 text-sm">*/}
-                    {/*        <a href="/" className="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition">*/}
-                    {/*            Gallery*/}
-                    {/*        </a>*/}
-                    {/*        <a href="/contact" className="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition">*/}
-                    {/*            Contact*/}
-                    {/*        </a>*/}
-                    {/*    </div>*/}
-                    {/*</div>*/}
+                    <div className="text-center">
+                        <h4 className="text-black dark:text-white font-semibold mb-3">Quick Links</h4>
+                        <div className="flex flex-col gap-2 text-sm">
+                            {quickLinks.map((link) => (
+                            <a
+                                key={link.label}
+                                href={link.url}
+                                className="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition"
+                                >
+                            {link.label}
+                                </a>
+                                ))}
+                        </div>
+                    </div>
 
                     <div className="text-center md:text-right">
                         <h4 className="text-black dark:text-white font-semibold mb-3">Follow</h4>
+                        <p className="text-gray-500 dark:text-gray-400 text-sm mb-3">
+                            oliantakogianni@gmail.com
+                        </p>
                         <div className="flex gap-4 justify-center md:justify-end">
                             {socialLinks.map((link) => {
                                 const Icon = link.icon;
                                 return (
-                            <a
+                                <a
                                     key={link.name}
                                 href={link.url}
                                 target={link.name === "Email" ? undefined : "_blank"}
