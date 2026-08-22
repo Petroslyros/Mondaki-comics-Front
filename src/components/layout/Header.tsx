@@ -30,7 +30,7 @@ const Header = () => {
                                 Contact
                             </Link>
                             <Link to="/about" className="hover:text-black dark:hover:text-white transition duration-200">
-                                Σχετικά
+                                About me
                             </Link>
                             {isAuthenticated && userRole === "Admin" && (
                                 <button
@@ -67,7 +67,7 @@ const Header = () => {
                                 Contact
                             </Link>
                             <Link to="/about" className="hover:text-black dark:hover:text-white transition duration-200">
-                                Σχετικά
+                                About me
                             </Link>
                             {isAuthenticated && userRole === "Admin" && (
                                 <Link to="/admin" className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition py-2 flex items-center gap-1" onClick={closeMenu}>
