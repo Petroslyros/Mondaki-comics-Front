@@ -10,6 +10,8 @@ import ContactPage from "@/components/pages/ContactPage";
 import LoginPage from "@/components/pages/LoginPage";
 import UnauthorizedPage from "@/components/pages/UnauthorizedPage";
 import AboutPage from "@/components/pages/AboutPage";
+import NewsPage from "@/components/pages/NewsPage";
+
 
 // Admin pages
 import AdminDashboardPage from "@/components/pages/admin/AdminDashboardPage";
@@ -18,6 +20,7 @@ import ArtworkFormPage from "@/components/pages/admin/ArtworkFormPage";
 import CategoriesAdminPage from "@/components/pages/admin/CategoriesAdminPage";
 import MessagesPage from "@/components/pages/admin/MessagesPage";
 import {ThemeProvider} from "@/context/ThemeProvider.tsx";
+import NewsAdminPage from "@/components/pages/admin/NewsAdminPage";
 
 function App() {
   return (
@@ -32,6 +35,7 @@ function App() {
               <Route path="contact" element={<ContactPage />} />
               <Route path="login" element={<LoginPage />} />
               <Route path="about" element={<AboutPage />} />
+              <Route path="news" element={<NewsPage />} />
               <Route path="unauthorized" element={<UnauthorizedPage />} />
 
               {/* Admin only routes */}
@@ -41,6 +45,7 @@ function App() {
                 <Route path="admin/artworks/new" element={<ArtworkFormPage />} />
                 <Route path="admin/artworks/:id" element={<ArtworkFormPage />} />
                 <Route path="admin/categories" element={<CategoriesAdminPage />} />
+                <Route path="admin/news" element={<NewsAdminPage />} />
                 <Route path="admin/messages" element={<MessagesPage />} />
               </Route>
             </Route>
