@@ -59,7 +59,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         setCookie("access_token", res.token, {
             expires: 7,
             sameSite: "Lax",
-            secure: false,
+            secure: import.meta.env.PROD,
             path: "/",
         });
 

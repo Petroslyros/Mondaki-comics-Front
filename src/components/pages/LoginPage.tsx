@@ -89,8 +89,13 @@ export default function LoginPage() {
                             </div>
                         )}
                     </div>
-
+                    {Object.keys(errors).length > 0 && (
+                        <div className="text-red-500 text-sm">
+                            {JSON.stringify(errors)}
+                        </div>
+                    )}
                     <Button
+                        type="submit"
                         disabled={isSubmitting}
                         className="w-full bg-[#e94560] hover:bg-[#c73652] text-white mt-2"
                     >
