@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router";
 import { useAuth } from "@/hooks/useAuth";
 import { AuthButton } from "@/components/AuthButton";
 import { Menu, X, LayoutDashboard } from "lucide-react";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const Header = () => {
     const { isAuthenticated, userRole } = useAuth();
@@ -39,10 +40,12 @@ const Header = () => {
                                 </button>
                             )}
                         </nav>
+                        <ThemeToggle />
                         {isAuthenticated && <AuthButton />}
                     </div>
 
-                    <div className="md:hidden">
+                    <div className="flex items-center gap-4 md:hidden">
+                        <ThemeToggle />
                         <button
                             onClick={() => setMenuOpen(!menuOpen)}
                             className="text-gray-300 hover:text-white transition"
