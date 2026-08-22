@@ -16,7 +16,7 @@ const AboutPage = () => {
                 {/* Text */}
                 <div className="md:col-span-2 flex flex-col gap-4">
                     <h1 className="text-4xl font-bold text-black dark:text-white mb-2">
-                        Σχετικά με εμένα
+                        About Me
                     </h1>
 
                     <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
