@@ -17,9 +17,8 @@ const Header = () => {
             <div className="container mx-auto px-6 py-4">
                 <div className="flex items-center justify-between">
                     <Link to="/" className="flex items-center gap-3" onClick={closeMenu}>
-                        <span className="text-black dark:text-white text-xl md:text-2xl font-bold tracking-wide">
-                            Mondaki<span className="text-gray-500 dark:text-gray-400">Comics</span>
-                        </span>
+                        <img src="/logo-light.png" alt="MondakiComics" className="h-10 w-auto dark:hidden" />
+                        <img src="/logo-dark.png" alt="MondakiComics" className="h-10 w-auto hidden dark:block" />
                     </Link>
 
                     <div className="hidden md:flex items-center gap-6">

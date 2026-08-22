@@ -15,9 +15,8 @@ const Footer = () => {
             <div className="container mx-auto px-6 py-8">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
                     <div className="text-center md:text-left">
-                        <h3 className="text-black dark:text-white font-bold text-lg mb-2">
-                            Mondaki<span className="text-gray-500 dark:text-gray-400">Comics</span>
-                        </h3>
+                        <img src="/logo-light.png" alt="MondakiComics" className="h-12 w-auto mx-auto md:mx-0 dark:hidden mb-2" />
+                        <img src="/logo-dark.png" alt="MondakiComics" className="h-12 w-auto mx-auto md:mx-0 hidden dark:block mb-2" />
                         <p className="text-gray-500 dark:text-gray-400 text-sm">
                             Original comics and illustrations
                         </p>
@@ -64,9 +63,6 @@ const Footer = () => {
                             © {currentYear}{" "}
                             <span className="font-medium text-black dark:text-white">Mondaki</span>
                             . All Rights Reserved.
-                        </div>
-                        <div className="text-xs text-gray-400 dark:text-gray-500">
-                            Built with React • ASP.NET Core • Cloudflare R2
                         </div>
                     </div>
                 </div>
