@@ -26,14 +26,15 @@ const Header = () => {
                             <Link to="/" className="hover:text-black dark:hover:text-white transition duration-200">
                                 Gallery
                             </Link>
-                            <Link to="/contact" className="hover:text-black dark:hover:text-white transition duration-200">
-                                Contact
-                            </Link>
+
                             <Link to="/news" className="hover:text-black dark:hover:text-white transition duration-200">
                                 News
                             </Link>
                             <Link to="/about" className="hover:text-black dark:hover:text-white transition duration-200">
                                 About me
+                            </Link>
+                            <Link to="/contact" className="hover:text-black dark:hover:text-white transition duration-200">
+                                Contact
                             </Link>
                             {isAuthenticated && userRole === "Admin" && (
                                 <button
@@ -66,14 +67,15 @@ const Header = () => {
                             <Link to="/" className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition py-2" onClick={closeMenu}>
                                 Gallery
                             </Link>
-                            <Link to="/contact" className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition py-2" onClick={closeMenu}>
-                                Contact
-                            </Link>
+
                             <Link to="/news" className="hover:text-black dark:hover:text-white transition duration-200">
                                 News
                             </Link>
                             <Link to="/about" className="hover:text-black dark:hover:text-white transition duration-200">
                                 About me
+                            </Link>
+                            <Link to="/contact" className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition py-2" onClick={closeMenu}>
+                                Contact
                             </Link>
                             {isAuthenticated && userRole === "Admin" && (
                                 <Link to="/admin" className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition py-2 flex items-center gap-1" onClick={closeMenu}>

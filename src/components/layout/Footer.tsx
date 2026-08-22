@@ -22,17 +22,17 @@ const Footer = () => {
                         </p>
                     </div>
 
-                    <div className="text-center">
-                        <h4 className="text-black dark:text-white font-semibold mb-3">Quick Links</h4>
-                        <div className="flex flex-col gap-2 text-sm">
-                            <a href="/" className="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition">
-                                Gallery
-                            </a>
-                            <a href="/contact" className="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition">
-                                Contact
-                            </a>
-                        </div>
-                    </div>
+                    {/*<div className="text-center">*/}
+                    {/*    <h4 className="text-black dark:text-white font-semibold mb-3">Quick Links</h4>*/}
+                    {/*    <div className="flex flex-col gap-2 text-sm">*/}
+                    {/*        <a href="/" className="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition">*/}
+                    {/*            Gallery*/}
+                    {/*        </a>*/}
+                    {/*        <a href="/contact" className="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition">*/}
+                    {/*            Contact*/}
+                    {/*        </a>*/}
+                    {/*    </div>*/}
+                    {/*</div>*/}
 
                     <div className="text-center md:text-right">
                         <h4 className="text-black dark:text-white font-semibold mb-3">Follow</h4>
