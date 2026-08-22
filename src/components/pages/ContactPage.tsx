@@ -28,27 +28,29 @@ const ContactPage = () => {
     const onSubmit = async (data: ContactInsert) => {
         try {
             await sendMessage(data);
-            toast.success("Message sent! I'll get back to you soon.");
+            toast.success("Το μήνυμα στάλθηκε! Θα σου απαντήσω σύντομα.");
             reset();
         } catch {
-            toast.error("Failed to send message. Please try again.");
+            toast.error("Αποτυχία αποστολής μηνύματος. Δοκίμασε ξανά.");
         }
     };
 
     return (
         <div className="container mx-auto px-6 py-12 max-w-4xl">
             <div className="text-center mb-12">
-                <h1 className="text-4xl font-bold text-white mb-4">Get In Touch</h1>
-                <p className="text-gray-400 max-w-xl mx-auto">
-                    Interested in commissioning a piece or just want to say hello?
-                    Send me a message and I'll get back to you as soon as possible.
+                <h1 className="text-4xl font-bold text-black dark:text-white mb-4">
+                    Επικοινωνία
+                </h1>
+                <p className="text-gray-600 dark:text-gray-400 max-w-xl mx-auto">
+                    Ενδιαφέρεσαι για μια παραγγελία ή απλά θες να πεις ένα γεια;
+                    Στείλε μου ένα μήνυμα και θα σου απαντήσω το συντομότερο δυνατό.
                 </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div className="bg-[#121212] border border-[#2a2a2a] rounded-lg p-8">
-                    <h2 className="text-white font-semibold text-xl mb-6">
-                        Send a Message
+                <div className="bg-gray-50 dark:bg-[#121212] border border-gray-200 dark:border-[#2a2a2a] rounded-lg p-8">
+                    <h2 className="text-black dark:text-white font-semibold text-xl mb-6">
+                        Στείλε ένα Μήνυμα
                     </h2>
                     <form
                         onSubmit={handleSubmit(onSubmit)}
@@ -56,52 +58,52 @@ const ContactPage = () => {
                         autoComplete="off"
                     >
                         <div>
-                            <Label htmlFor="senderName" className="text-gray-300">
-                                Your Name
+                            <Label htmlFor="senderName" className="text-gray-600 dark:text-gray-300">
+                                Το Όνομά σου
                             </Label>
                             <Input
                                 id="senderName"
                                 {...register("senderName")}
-                                className="bg-[#0a0a0a] border-[#2a2a2a] text-white mt-1"
-                                placeholder="Jane Doe"
+                                className="bg-white dark:bg-[#0a0a0a] border-gray-300 dark:border-[#2a2a2a] text-black dark:text-white mt-1"
+                                placeholder="Μαρία Παπαδοπούλου"
                             />
                             {errors.senderName && (
-                                <p className="text-gray-400 text-sm mt-1">
+                                <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">
                                     {errors.senderName.message}
                                 </p>
                             )}
                         </div>
 
                         <div>
-                            <Label htmlFor="senderEmail" className="text-gray-300">
-                                Your Email
+                            <Label htmlFor="senderEmail" className="text-gray-600 dark:text-gray-300">
+                                Το Email σου
                             </Label>
                             <Input
                                 id="senderEmail"
                                 type="email"
                                 {...register("senderEmail")}
-                                className="bg-[#0a0a0a] border-[#2a2a2a] text-white mt-1"
-                                placeholder="jane@example.com"
+                                className="bg-white dark:bg-[#0a0a0a] border-gray-300 dark:border-[#2a2a2a] text-black dark:text-white mt-1"
+                                placeholder="maria@example.com"
                             />
                             {errors.senderEmail && (
-                                <p className="text-gray-400 text-sm mt-1">
+                                <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">
                                     {errors.senderEmail.message}
                                 </p>
                             )}
                         </div>
 
                         <div>
-                            <Label htmlFor="message" className="text-gray-300">
-                                Message
+                            <Label htmlFor="message" className="text-gray-600 dark:text-gray-300">
+                                Μήνυμα
                             </Label>
                             <Textarea
                                 id="message"
                                 {...register("message")}
-                                className="bg-[#0a0a0a] border-[#2a2a2a] text-white mt-1 min-h-[120px]"
-                                placeholder="Tell me about your project..."
+                                className="bg-white dark:bg-[#0a0a0a] border-gray-300 dark:border-[#2a2a2a] text-black dark:text-white mt-1 min-h-[120px]"
+                                placeholder="Πες μου για το project σου..."
                             />
                             {errors.message && (
-                                <p className="text-gray-400 text-sm mt-1">
+                                <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">
                                     {errors.message.message}
                                 </p>
                             )}
@@ -110,20 +112,20 @@ const ContactPage = () => {
                         <Button
                             type="submit"
                             disabled={isSubmitting}
-                            className="w-full bg-white hover:bg-gray-200 text-black"
+                            className="w-full bg-black hover:bg-gray-800 dark:bg-white dark:hover:bg-gray-200 text-white dark:text-black"
                         >
-                            {isSubmitting ? "Sending..." : "Send Message"}
+                            {isSubmitting ? "Αποστολή..." : "Αποστολή Μηνύματος"}
                         </Button>
                     </form>
                 </div>
 
                 <div className="flex flex-col gap-6 justify-center">
-                    <h2 className="text-white font-semibold text-xl">
-                        Find Me Online
+                    <h2 className="text-black dark:text-white font-semibold text-xl">
+                        Βρες με Online
                     </h2>
-                    <p className="text-gray-400">
-                        You can also reach me through my social media channels
-                        or send me a direct email.
+                    <p className="text-gray-600 dark:text-gray-400">
+                        Μπορείς επίσης να με βρεις στα social media
+                        ή να μου στείλεις απευθείας email.
                     </p>
 
                     <div className="flex flex-col gap-4">
@@ -131,25 +133,25 @@ const ContactPage = () => {
                         href="https://www.instagram.com/mondastardust95/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-3 text-gray-300 hover:text-white transition"
+                        className="flex items-center gap-3 text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition"
                         >
-                        <FaInstagram className="w-5 h-5 text-gray-400" />
+                        <FaInstagram className="w-5 h-5 text-gray-500 dark:text-gray-400" />
                         @mondastardust95
                     </a>
                     <a
                     href="https://www.facebook.com/mondaki.dakogianni"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 text-gray-300 hover:text-white transition"
+                    className="flex items-center gap-3 text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition"
                     >
-                    <FaFacebookF className="w-5 h-5 text-gray-400" />
+                    <FaFacebookF className="w-5 h-5 text-gray-500 dark:text-gray-400" />
                     Mondaki Comics
                 </a>
                 <a
                 href="mailto:oliantakogianni@gmail.com"
-                className="flex items-center gap-3 text-gray-300 hover:text-white transition"
+                className="flex items-center gap-3 text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition"
                 >
-                <Mail className="w-5 h-5 text-gray-400" />
+                <Mail className="w-5 h-5 text-gray-500 dark:text-gray-400" />
                 oliantakogianni@gmail.com
             </a>
         </div>
