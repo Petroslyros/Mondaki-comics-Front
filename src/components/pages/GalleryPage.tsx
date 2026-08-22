@@ -52,7 +52,7 @@ const GalleryPage = () => {
                 >
                     Mondaki<span className="text-gray-500 dark:text-gray-400">Comics</span>
                 </h1>
-                <p className="text-gray-500 dark:text-gray-400 text-lg max-w-xl mx-auto">
+                <p className="text-gray-500 dark:text-gray-400 text-base italic max-w-xl mx-auto">
                     Original comics and illustrations
                 </p>
             </div>
