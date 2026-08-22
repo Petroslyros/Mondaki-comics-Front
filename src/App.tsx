@@ -9,6 +9,7 @@ import ArtworkDetailPage from "@/components/pages/ArtworkDetailPage";
 import ContactPage from "@/components/pages/ContactPage";
 import LoginPage from "@/components/pages/LoginPage";
 import UnauthorizedPage from "@/components/pages/UnauthorizedPage";
+import AboutPage from "@/components/pages/AboutPage";
 
 // Admin pages
 import AdminDashboardPage from "@/components/pages/admin/AdminDashboardPage";
@@ -30,6 +31,7 @@ function App() {
               <Route path="artwork/:id" element={<ArtworkDetailPage />} />
               <Route path="contact" element={<ContactPage />} />
               <Route path="login" element={<LoginPage />} />
+              <Route path="about" element={<AboutPage />} />
               <Route path="unauthorized" element={<UnauthorizedPage />} />
 
               {/* Admin only routes */}

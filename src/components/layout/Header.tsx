@@ -29,6 +29,9 @@ const Header = () => {
                             <Link to="/contact" className="hover:text-black dark:hover:text-white transition duration-200">
                                 Contact
                             </Link>
+                            <Link to="/about" className="hover:text-black dark:hover:text-white transition duration-200">
+                                Σχετικά
+                            </Link>
                             {isAuthenticated && userRole === "Admin" && (
                                 <button
                                     onClick={() => navigate("/admin")}
@@ -62,6 +65,9 @@ const Header = () => {
                             </Link>
                             <Link to="/contact" className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition py-2" onClick={closeMenu}>
                                 Contact
+                            </Link>
+                            <Link to="/about" className="hover:text-black dark:hover:text-white transition duration-200">
+                                Σχετικά
                             </Link>
                             {isAuthenticated && userRole === "Admin" && (
                                 <Link to="/admin" className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition py-2 flex items-center gap-1" onClick={closeMenu}>
