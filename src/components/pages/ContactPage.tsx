@@ -8,9 +8,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { Mail } from "lucide-react";
+import { useNavigate } from "react-router";
+import { ArrowLeft } from "lucide-react";
 import { FaInstagram, FaFacebookF } from "react-icons/fa";
 
 const ContactPage = () => {
+    const navigate = useNavigate();
     const {
         register,
         handleSubmit,
@@ -37,6 +40,14 @@ const ContactPage = () => {
 
     return (
         <div className="container mx-auto px-6 py-12 max-w-4xl">
+            <Button
+                variant="ghost"
+                onClick={() => navigate("/")}
+                className="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white mb-8"
+            >
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                Back to Gallery
+            </Button>
             <div className="text-center mb-12">
                 <h1 className="text-4xl font-bold text-black dark:text-white mb-4">
                     Επικοινωνία
