@@ -31,7 +31,7 @@ export const artworkInsertSchema = z.object({
     title: z.string().min(1, { message: "Title is required" }),
     description: z.string().optional(),
     isPublished: z.boolean(),
-    sortOrder: z.number().int().default(0),
+    sortOrder: z.number().int(),
 });
 
 export const artworkUpdateSchema = z.object({
