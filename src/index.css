@@ -6,7 +6,7 @@
 
 @font-face {
     font-family: "Komika Hand";
-    src: url("public/fonts/ComicBookFun-Regular_2.0.ttf") format("truetype");
+    src: url("/fonts/ComicBookFun-Regular_2.0.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
