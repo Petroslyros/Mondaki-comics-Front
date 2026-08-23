@@ -1,75 +1,74 @@
-# React + TypeScript + Vite
+# MondakiComics — Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Tech Stack
 
-Currently, two official plugins are available:
+- **React 19** + **TypeScript**
+- **Vite** (build tool)
+- **React Router** (routing)
+- **Tailwind CSS v4** (styling, dark/light mode)
+- **shadcn/ui** (Radix UI components)
+- **React Hook Form** + **Zod** (forms & validation)
+- **Sonner** (toast notifications)
+- **Lucide React** + **react-icons** (icons)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Δομή
+src/
+├── components/
+│ ├── layout/ → Header, Footer, Layout (με ThemeToggle)
+│ ├── pages/ → Public σελίδες (Gallery, News, About, Contact, Login)
+│ │ └── admin/ → Admin panel σελίδες (protected routes)
+│ ├── ui/ → shadcn/ui components
+│ ├── AuthButton.tsx
+│ └── ProtectedRoute.tsx
+├── context/ → AuthContext/Provider, ThemeContext/Provider
+├── hooks/ → useAuth, useTheme
+├── schemas/ → Zod schemas + TypeScript types (artworks, categories, contact, news, login)
+├── services/ → API calls (fetch wrappers) ανά domain
+└── utils/ → Cookies, auth headers helpers
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+- **Δημόσια Gallery** — grid artworks με category filtering, detail view με image carousel
+- **Νέα** — λίστα ανακοινώσεων με προαιρετική εικόνα, detail σελίδα
+- **About Me** — στατική σελίδα παρουσίασης
+- **Contact Form** — comic-style speech bubble design, στέλνει μηνύματα στο backend
+- **Admin Panel** (protected, JWT-based):
+  - Dashboard με στατιστικά
+  - Διαχείριση Artworks (CRUD, upload εικόνων, cover selection, publish toggle)
+  - Διαχείριση Categories
+  - Διαχείριση News (CRUD, εικόνα, publish toggle)
+  - Inbox μηνυμάτων επικοινωνίας
+- **Dark / Light Mode** — toggle με persistence (localStorage)
+- **Πλήρως responsive** design
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Environment Variables
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Δημιούργησε `.env` στο root:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Για τοπική ανάπτυξη, χρησιμοποίησε το τοπικό backend URL (π.χ. `https://localhost:5002/api`).
 
+## Τοπική εκτέλεση
+
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+Build για production:
+```bash
+npm run build
 ```
+
+## Deployment
+
+Hosted στο **Vercel**. Auto-deploys από το `master` branch. Το `vercel.json` περιέχει rewrite rule ώστε το client-side routing (React Router) να δουλεύει σωστά σε direct navigation/refresh.
+
+## Authentication
+
+Το JWT token αποθηκεύεται σε cookie (`access_token`) μέσω `js-cookie`. Το `AuthProvider` διαχειρίζεται login/logout state, decode του token για user claims (username, role), και automatic logout σε expired tokens.
+
+## Θέματα (Themes)
+
+Το dark/light mode υλοποιείται με Tailwind's `dark:` variant (class-based, όχι media query), ελεγχόμενο μέσω `ThemeProvider` που προσθέτει/αφαιρεί την class `dark` στο `<html>` element.
