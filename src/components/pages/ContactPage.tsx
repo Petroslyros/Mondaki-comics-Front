@@ -71,13 +71,13 @@ const ContactPage = () => {
                             autoComplete="off"
                         >
                             <div className="bg-gray-50 dark:bg-[#0a0a0a] border-2 border-black dark:border-white rounded-2xl px-4 py-3">
-                                <Label htmlFor="senderName" className="text-gray-600 dark:text-gray-300 text-xs uppercase tracking-wide">
+                                <Label htmlFor="senderName" className="text-gray-600 dark:text-gray-300 text-xs tracking-wide">
                                     Το Όνομά σου
                                 </Label>
                                 <Input
                                     id="senderName"
                                     {...register("senderName")}
-                                    className="bg-transparent border-none text-black dark:text-white mt-1 p-0 h-auto focus-visible:ring-0"
+                                    className="bg-transparent border-none text-black dark:text-white caret-black dark:caret-white mt-1 p-0 h-auto focus-visible:ring-0"
                                     placeholder=""
                                 />
                                 {errors.senderName && (
@@ -88,14 +88,14 @@ const ContactPage = () => {
                             </div>
 
                             <div className="bg-gray-50 dark:bg-[#0a0a0a] border-2 border-black dark:border-white rounded-2xl px-4 py-3">
-                                <Label htmlFor="senderEmail" className="text-gray-600 dark:text-gray-300 text-xs uppercase tracking-wide">
+                                <Label htmlFor="senderEmail" className="text-gray-600 dark:text-gray-300 text-xs tracking-wide">
                                     Το Email σου
                                 </Label>
                                 <Input
                                     id="senderEmail"
                                     type="email"
                                     {...register("senderEmail")}
-                                    className="bg-transparent border-none text-black dark:text-white mt-1 p-0 h-auto focus-visible:ring-0"
+                                    className="bg-transparent border-none text-black dark:text-white caret-black dark:caret-white mt-1 p-0 h-auto focus-visible:ring-0"
                                     placeholder=""
                                 />
                                 {errors.senderEmail && (
@@ -106,13 +106,13 @@ const ContactPage = () => {
                             </div>
 
                             <div className="bg-gray-50 dark:bg-[#0a0a0a] border-2 border-black dark:border-white rounded-2xl px-4 py-3">
-                                <Label htmlFor="message" className="text-gray-600 dark:text-gray-300 text-xs uppercase tracking-wide">
+                                <Label htmlFor="message" className="text-gray-600 dark:text-gray-300 text-xs tracking-wide">
                                     Μήνυμα
                                 </Label>
                                 <Textarea
                                     id="message"
                                     {...register("message")}
-                                    className="bg-transparent border-none text-black dark:text-white mt-1 p-0 min-h-[100px] resize-none focus-visible:ring-0"
+                                    className="bg-transparent border-none text-black dark:text-white caret-black dark:caret-white mt-1 p-0 min-h-[100px] resize-none focus-visible:ring-0"
                                     placeholder=""
                                 />
                                 {errors.message && (
