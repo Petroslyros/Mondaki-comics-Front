@@ -22,8 +22,8 @@ const Footer = () => {
             <div className="container mx-auto px-6 py-8">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
                     <div className="text-center md:text-left">
-                        <img src="/logo-light.png" alt="MondakiComics" className="h-20 w-26 mx-auto md:mx-0 dark:hidden mb-2" />
-                        <img src="/logo-dark.png" alt="MondakiComics" className="h-20 w-26 mx-auto md:mx-0 hidden dark:block mb-2" />
+                        <img src="/logo-light.png" alt="MondakiComics" className="h-20 w-auto mx-auto md:mx-0 dark:hidden mb-2" />
+                        <img src="/logo-dark.png" alt="MondakiComics" className="h-20 w-auto mx-auto md:mx-0 hidden dark:block mb-2" />
                         <p className="text-gray-500 dark:text-gray-400 text-sm">
                             Original comics and illustrations
                         </p>
