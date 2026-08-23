@@ -9,7 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { ArrowLeft, Mail } from "lucide-react";
-import { FaInstagram, FaFacebookF } from "react-icons/fa";
+import { FaInstagram, FaFacebookF,FaLinkedinIn  } from "react-icons/fa";
 
 const ContactPage = () => {
     const navigate = useNavigate();
@@ -165,6 +165,15 @@ const ContactPage = () => {
                     <FaFacebookF className="w-5 h-5 text-gray-500 dark:text-gray-400" />
                     Mondaki Comics
                 </a>
+                <a
+                        href="https://www.linkedin.com/in/olia-ntakogianni-5332371a4/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-3 text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition"
+                        >
+                        <FaLinkedinIn className="w-5 h-5 text-gray-500 dark:text-gray-400" />
+                        Olia Ntakogianni
+                    </a>
                 <a
                 href="mailto:oliantakogianni@gmail.com"
                 className="flex items-center gap-3 text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition"

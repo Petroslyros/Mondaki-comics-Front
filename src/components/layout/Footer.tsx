@@ -1,5 +1,6 @@
 import { Mail } from "lucide-react";
-import { FaInstagram, FaFacebookF } from "react-icons/fa";
+import { FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
+
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -7,6 +8,7 @@ const Footer = () => {
     const socialLinks = [
         { name: "Instagram", url: "https://www.instagram.com/mondastardust95/", icon: FaInstagram },
         { name: "Facebook", url: "https://www.facebook.com/mondaki.dakogianni", icon: FaFacebookF },
+        { name: "LinkedIn", url: "https://www.linkedin.com/in/olia-ntakogianni-5332371a4/", icon: FaLinkedinIn },
         { name: "Email", url: "mailto:oliantakogianni@gmail.com", icon: Mail },
     ];
 
