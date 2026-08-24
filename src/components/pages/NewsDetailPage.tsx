@@ -48,11 +48,11 @@ const NewsDetailPage = () => {
             </Button>
 
             {post.imageUrl && (
-                <div className="w-full aspect-video rounded-lg overflow-hidden bg-gray-100 dark:bg-[#121212] mb-8">
+                <div className="w-full rounded-lg overflow-hidden bg-gray-100 dark:bg-[#121212] mb-8">
                     <img
                         src={post.imageUrl}
                         alt={post.title}
-                        className="w-full h-full object-cover"
+                        className="w-full h-auto max-h-[600px] object-contain mx-auto"
                     />
                 </div>
             )}
