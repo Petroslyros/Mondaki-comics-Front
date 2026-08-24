@@ -37,7 +37,7 @@ const AboutPage = () => {
                         <strong className="text-black dark:text-white">αρχαιολόγος, μουσειοπαιδαγωγός και δημιουργός κόμικς</strong>,
                         με ιδιαίτερο ενδιαφέρον για την{" "}
                         <strong className="text-black dark:text-white">αφήγηση</strong>, την{" "}
-                        <strong className="text-black dark:text-white">εικονογράφηση</strong>και τη
+                        <strong className="text-black dark:text-white">εικονογράφηση</strong> και τη
                         σύνδεση της αρχαιολογίας με τη σύγχρονη{" "}
                         <strong className="text-black dark:text-white">οπτική επικοινωνία</strong>. Από το
                         2017 δραστηριοποιούμαι επαγγελματικά στον χώρο των κόμικς. Παράλληλα, έχω
